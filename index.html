@@ -611,7 +611,7 @@ tbody tr:hover td { background: var(--surface-hover); }
 /* Study options — before answering */
 .study-options-list { display: flex; flex-direction: column; gap: .7rem; }
 .study-option {
-  display: flex; align-items: center; gap: 1rem; padding: .9rem 1.2rem;
+  display: flex; alignPracticerem; padding: .9rem 1.2rem;
   border: 2px solid var(--border); border-radius: var(--radius-md);
   cursor: pointer; transition: all .2s; user-select: none;
   position: relative; overflow: hidden;
@@ -838,7 +838,7 @@ tbody tr:hover td { background: var(--surface-hover); }
     <div class="start-banner">
       <div>
         <h3>🚀 Start New Exam</h3>
-        <p>70 randomly selected questions · 7 topics · 40 minutes</p>
+        <p>70 randomly selected questions . 40 minutes</p>
       </div>
       <button class="btn btn-lg" id="startExamBtn" onclick="startNewExam()">Begin Exam →</button>
     </div>
@@ -847,7 +847,7 @@ tbody tr:hover td { background: var(--surface-hover); }
     <div class="start-banner" style="background: linear-gradient(135deg, #7c3aed, #0ea5e9); margin-bottom: 1.75rem;">
       <div>
         <h3>📖 Study Past Questions</h3>
-        <p>Practice with real past questions · Instant feedback · Detailed explanations · No time limit</p>
+        <p>Practice past questions · Instant feedback · Detailed explanations · No time limit</p>
       </div>
       <button class="btn btn-lg" id="startStudyBtn" onclick="goToPage('studyPage')">Study Now →</button>
     </div>
