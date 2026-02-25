@@ -381,7 +381,7 @@ tbody tr:hover td { background: var(--surface-hover); }
   box-shadow: var(--shadow-xl); padding: 1rem; width: 280px;
   animation: slideUp .3s ease;
 }
-Universitynd: var(--text); color: white; padding: .75rem 1rem;
+.calc-display { background: var(--text); color: white; padding: .75rem 1rem;
   border-radius: var(--radius); font-family: 'JetBrains Mono', monospace;
   font-size: 1.4rem; text-align: right; margin-bottom: .75rem;
   min-height: 56px; word-break: break-all;
@@ -542,6 +542,218 @@ Universitynd: var(--text); color: white; padding: .75rem 1rem;
   .history-summary { grid-template-columns: repeat(3, 1fr); }
   .main { padding: 1rem; }
 }
+
+/* ═══════════════════════════════════
+   STUDY MODE — NEW
+═══════════════════════════════════ */
+#studyPage { background: var(--bg); }
+
+/* Study header bar */
+.study-header {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: .75rem 1.5rem; display: flex; align-items: center;
+  justify-content: space-between; position: sticky; top: 0; z-index: 50;
+  box-shadow: var(--shadow-sm); flex-wrap: wrap; gap: .5rem;
+}
+.study-header-left { display: flex; flex-direction: column; }
+.study-header-left h2 { font-size: 1rem; font-weight: 700; }
+.study-header-left p { font-size: .75rem; color: var(--text-3); }
+.study-header-right { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+
+/* Study progress bar */
+.study-progress-wrap { display: flex; align-items: center; gap: .6rem; }
+.study-progress-bar { width: 120px; height: 8px; background: var(--border); border-radius: 10px; overflow: hidden; }
+.study-progress-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--primary), #0ea5e9); transition: width .4s ease; }
+.study-progress-text { font-size: .78rem; font-weight: 700; color: var(--text-2); white-space: nowrap; }
+
+/* Study score badge in header */
+.study-score-badge {
+  display: flex; align-items: center; gap: .4rem; background: var(--surface-hover);
+  border: 1px solid var(--border); border-radius: var(--radius-full);
+  padding: .3rem .75rem; font-size: .78rem; font-weight: 700;
+}
+.study-score-badge .sc-correct { color: var(--success-dark); }
+.study-score-badge .sc-wrong { color: var(--danger-dark); }
+
+/* Study main area */
+.study-main { padding: 1.5rem; max-width: 820px; margin: 0 auto; }
+
+/* Study card */
+.study-card {
+  background: var(--surface); border-radius: var(--radius-md);
+  padding: 2rem; box-shadow: var(--shadow); margin-bottom: 1.25rem;
+  transition: box-shadow .3s;
+}
+.study-card:hover { box-shadow: var(--shadow-md); }
+
+.study-q-header {
+  display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;
+}
+.study-q-num {
+  background: linear-gradient(135deg, var(--primary), #0ea5e9);
+  color: white; width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .9rem; flex-shrink: 0;
+}
+.study-q-meta { flex: 1; }
+.study-q-meta .s-topic { font-weight: 700; font-size: .9rem; }
+.study-q-meta .s-source { font-size: .72rem; color: var(--text-3); margin-top: .15rem; }
+.study-q-source-badge {
+  display: inline-block; padding: 2px 8px; border-radius: var(--radius-full);
+  font-size: .65rem; font-weight: 700; background: #f0f9ff; color: #0369a1;
+  border: 1px solid #bae6fd; white-space: nowrap;
+}
+.study-question-text {
+  font-size: 1rem; line-height: 1.75; color: var(--text); margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Study options — before answering */
+.study-options-list { display: flex; flex-direction: column; gap: .7rem; }
+.study-option {
+  display: flex; align-items: center; gap: 1rem; padding: .9rem 1.2rem;
+  border: 2px solid var(--border); border-radius: var(--radius-md);
+  cursor: pointer; transition: all .2s; user-select: none;
+  position: relative; overflow: hidden;
+}
+.study-option:hover:not(.answered) { border-color: var(--primary); background: var(--primary-light); }
+.study-option.answered { cursor: default; pointer-events: none; }
+
+/* Correct answer option */
+.study-option.opt-correct {
+  border-color: var(--success); background: var(--success-light);
+  animation: correctPop .3s ease;
+}
+/* Wrong answer — the one the student picked */
+.study-option.opt-wrong {
+  border-color: var(--danger); background: var(--danger-light);
+  animation: wrongShake .4s ease;
+}
+/* Highlight the correct one even when student got it wrong */
+.study-option.opt-reveal-correct {
+  border-color: var(--success); background: var(--success-light);
+}
+
+@keyframes correctPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.study-opt-key {
+  width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .85rem; flex-shrink: 0; transition: all .2s;
+}
+.study-option:hover:not(.answered) .study-opt-key { background: var(--primary); border-color: var(--primary); color: white; }
+.study-option.opt-correct .study-opt-key { background: var(--success); border-color: var(--success); color: white; }
+.study-option.opt-wrong .study-opt-key { background: var(--danger); border-color: var(--danger); color: white; }
+.study-option.opt-reveal-correct .study-opt-key { background: var(--success); border-color: var(--success); color: white; }
+
+.study-opt-text { flex: 1; font-size: .9rem; line-height: 1.5; }
+.study-opt-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+/* Explanation box — hidden until answered */
+.study-explanation {
+  display: none; margin-top: 1.25rem;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 1px solid #bae6fd; border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  animation: slideUp .3s ease;
+}
+.study-explanation.visible { display: block; }
+.study-explanation-title {
+  font-size: .82rem; font-weight: 800; color: #0369a1; margin-bottom: .5rem;
+  display: flex; align-items: center; gap: .4rem;
+}
+.study-explanation-text { font-size: .85rem; line-height: 1.7; color: #0c4a6e; }
+
+/* Result feedback line below options */
+.study-feedback {
+  display: none; align-items: center; gap: .5rem;
+  margin-top: .75rem; padding: .6rem 1rem; border-radius: var(--radius);
+  font-size: .85rem; font-weight: 700;
+}
+.study-feedback.visible { display: flex; }
+.study-feedback.fb-correct { background: var(--success-light); color: var(--success-dark); }
+.study-feedback.fb-wrong { background: var(--danger-light); color: var(--danger-dark); }
+
+/* Study navigation */
+.study-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; flex-wrap: wrap; margin-top: .5rem;
+}
+.study-nav button { min-width: 120px; }
+
+/* Study mode selection screen */
+.study-setup {
+  max-width: 600px; margin: 3rem auto; padding: 0 1rem; text-align: center;
+}
+.study-setup-card {
+  background: var(--surface); border-radius: var(--radius-lg);
+  padding: 2.5rem; box-shadow: var(--shadow-lg);
+}
+.study-setup-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.study-setup-card h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: .5rem; }
+.study-setup-card p { color: var(--text-3); font-size: .9rem; margin-bottom: 2rem; }
+.study-options-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: 2rem;
+}
+.study-count-btn {
+  padding: .9rem; border: 2px solid var(--border); border-radius: var(--radius-md);
+  background: var(--surface); cursor: pointer; font-family: inherit;
+  font-size: .9rem; font-weight: 700; transition: all .2s; color: var(--text);
+}
+.study-count-btn:hover { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+.study-count-btn.selected { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+.study-count-btn span { display: block; font-size: .72rem; font-weight: 500; color: var(--text-3); margin-top: .2rem; }
+
+/* Study complete screen */
+.study-complete {
+  display: none; max-width: 500px; margin: 3rem auto; padding: 0 1rem; text-align: center;
+}
+.study-complete.visible { display: block; }
+.study-complete-card {
+  background: var(--surface); border-radius: var(--radius-lg);
+  padding: 2.5rem; box-shadow: var(--shadow-lg);
+}
+.study-result-circle {
+  width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 1.5rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-weight: 900; border: 5px solid;
+}
+.study-result-circle .src-pct { font-size: 2rem; line-height: 1; }
+.study-result-circle .src-lbl { font-size: .72rem; font-weight: 600; }
+
+/* Mini palette for study mode */
+.study-palette {
+  display: flex; flex-wrap: wrap; gap: .3rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: .75rem; margin-bottom: 1rem;
+  max-height: 80px; overflow-y: auto;
+}
+.sp-btn {
+  width: 28px; height: 28px; border: none; border-radius: 5px; font-size: .7rem;
+  font-weight: 700; cursor: pointer; transition: all .15s;
+  background: var(--border); color: var(--text-3);
+}
+.sp-btn.sp-current { background: var(--primary); color: white; }
+.sp-btn.sp-correct { background: var(--success); color: white; }
+.sp-btn.sp-wrong { background: var(--danger); color: white; }
+.sp-btn.sp-unanswered { background: var(--border); color: var(--text-3); }
+
+@media (max-width: 640px) {
+  .study-header { padding: .6rem 1rem; }
+  .study-main { padding: 1rem; }
+  .study-card { padding: 1.25rem; }
+  .study-options-grid { grid-template-columns: 1fr 1fr; }
+  .study-progress-bar { width: 80px; }
+}
 </style>
 </head>
 <body>
@@ -604,6 +816,7 @@ Universitynd: var(--text); color: white; padding: .75rem 1rem;
     <button class="nav-tab" onclick="goToPage('dashboardPage',this)">📊 Dashboard</button>
     <button class="nav-tab" onclick="goToPage('historyPage',this)">📋 History</button>
     <button class="nav-tab" onclick="goToPage('analyticsPage',this)">📈 Analytics</button>
+    <button class="nav-tab" onclick="goToPage('studyPage',this)">📖 Study Mode</button>
   </div>
   <div class="navbar-user">
     <div class="user-meta">
@@ -628,6 +841,15 @@ Universitynd: var(--text); color: white; padding: .75rem 1rem;
         <p>70 randomly selected questions · 7 topics · 40 minutes</p>
       </div>
       <button class="btn btn-lg" id="startExamBtn" onclick="startNewExam()">Begin Exam →</button>
+    </div>
+
+    <!-- STUDY MODE BANNER — NEW -->
+    <div class="start-banner" style="background: linear-gradient(135deg, #7c3aed, #0ea5e9); margin-bottom: 1.75rem;">
+      <div>
+        <h3>📖 Study Past Questions</h3>
+        <p>Practice with real past questions · Instant feedback · Detailed explanations · No time limit</p>
+      </div>
+      <button class="btn btn-lg" id="startStudyBtn" onclick="goToPage('studyPage')">Study Now →</button>
     </div>
 
     <div class="stats-grid">
@@ -952,6 +1174,182 @@ Universitynd: var(--text); color: white; padding: .75rem 1rem;
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     STUDY MODE PAGE — NEW
+═══════════════════════════════════════════════════════ -->
+<div id="studyPage" class="page">
+
+  <!-- Setup screen — shown first -->
+  <div id="studySetupScreen" class="study-setup">
+    <div class="study-setup-card">
+      <div class="study-setup-icon">📖</div>
+      <h2>Study Past Questions</h2>
+      <p>Practice real past exam questions from your course. Pick an answer and instantly see if you're right — with a full explanation. No time pressure. Just learning.</p>
+
+      <div style="margin-bottom:1.5rem">
+        <div style="font-size:.82rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.75rem">How many questions?</div>
+        <div class="study-options-grid">
+          <button class="study-count-btn selected" data-count="10" onclick="selectStudyCount(10, this)">
+            10
+            <span>Quick review</span>
+          </button>
+          <button class="study-count-btn" data-count="20" onclick="selectStudyCount(20, this)">
+            20
+            <span>Standard session</span>
+          </button>
+          <button class="study-count-btn" data-count="40" onclick="selectStudyCount(40, this)">
+            40
+            <span>Deep practice</span>
+          </button>
+          <button class="study-count-btn" data-count="all" onclick="selectStudyCount('all', this)">
+            All
+            <span>Full past Qs</span>
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem">
+        <div style="font-size:.82rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.75rem">Order</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <button class="study-count-btn selected" data-order="random" onclick="selectStudyOrder('random', this)">
+            🔀 Randomized
+            <span>Shuffled each time</span>
+          </button>
+          <button class="study-count-btn" data-order="sequential" onclick="selectStudyOrder('sequential', this)">
+            📋 Sequential
+            <span>Original order</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="studySetupInfo" style="background:var(--primary-light);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--primary);font-weight:600;margin-bottom:1.5rem">
+        📚 Loading past questions...
+      </div>
+
+      <button class="btn btn-primary btn-lg w-full" id="beginStudyBtn" onclick="beginStudySession()" disabled style="width:100%">
+        Begin Study Session →
+      </button>
+      <button class="btn btn-ghost btn-sm" onclick="goToPage('dashboardPage')" style="width:100%;margin-top:.75rem">
+        ← Back to Dashboard
+      </button>
+    </div>
+  </div>
+
+  <!-- Active study session screen -->
+  <div id="studyActiveScreen" style="display:none">
+
+    <!-- Sticky header -->
+    <div class="study-header">
+      <div class="study-header-left">
+        <h2>📖 Study Mode</h2>
+        <p id="studyHeaderSub">Past Questions Practice</p>
+      </div>
+
+      <div class="study-header-right">
+        <!-- Progress -->
+        <div class="study-progress-wrap">
+          <div class="study-progress-bar">
+            <div class="study-progress-fill" id="studyProgressFill" style="width:0%"></div>
+          </div>
+          <span class="study-progress-text" id="studyProgressText">0 / 0</span>
+        </div>
+
+        <!-- Live score -->
+        <div class="study-score-badge">
+          <span class="sc-correct">✅ <span id="studyScoreCorrect">0</span></span>
+          <span style="color:var(--border-dark)">·</span>
+          <span class="sc-wrong">❌ <span id="studyScoreWrong">0</span></span>
+        </div>
+
+        <!-- Exit button -->
+        <button class="btn btn-danger btn-sm" onclick="exitStudyMode()">✕ Exit</button>
+      </div>
+    </div>
+
+    <!-- Mini question palette -->
+    <div style="max-width:820px;margin:1rem auto 0;padding:0 1.5rem">
+      <div class="study-palette" id="studyPalette"></div>
+    </div>
+
+    <!-- Question card area -->
+    <div class="study-main" id="studyMainArea">
+
+      <div class="study-card" id="studyCard">
+        <!-- Question header -->
+        <div class="study-q-header">
+          <div class="study-q-num" id="studyQNum">1</div>
+          <div class="study-q-meta">
+            <div class="s-topic" id="studyQTopic">Topic</div>
+            <div class="s-source">
+              <span class="study-q-source-badge" id="studyQSource">Source</span>
+            </div>
+          </div>
+          <div style="font-size:.78rem;color:var(--text-3);font-weight:600" id="studyQProgress">1 / 10</div>
+        </div>
+
+        <!-- Question text -->
+        <div class="study-question-text" id="studyQText">Loading question...</div>
+
+        <!-- Options -->
+        <div class="study-options-list" id="studyOptsList"></div>
+
+        <!-- Feedback line -->
+        <div class="study-feedback" id="studyFeedback"></div>
+
+        <!-- Explanation (revealed after answering) -->
+        <div class="study-explanation" id="studyExplanation">
+          <div class="study-explanation-title">💡 Explanation</div>
+          <div class="study-explanation-text" id="studyExplanationText"></div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="study-nav">
+        <button class="btn btn-secondary" onclick="navStudy(-1)" id="studyPrevBtn">← Previous</button>
+        <div style="display:flex;gap:.5rem">
+          <button class="btn btn-ghost btn-sm" onclick="exitStudyMode()">✕ Exit</button>
+        </div>
+        <button class="btn btn-primary" onclick="navStudy(1)" id="studyNextBtn">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Study complete screen -->
+  <div id="studyCompleteScreen" class="study-complete">
+    <div class="study-complete-card">
+      <div class="study-result-circle" id="studyResultCircle">
+        <div class="src-pct" id="studyResultPct">—</div>
+        <div class="src-lbl">Score</div>
+      </div>
+      <h2 id="studyResultTitle">Session Complete!</h2>
+      <p id="studyResultMsg" style="color:var(--text-3);margin:.5rem 0 1.5rem"></p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin-bottom:1.5rem">
+        <div style="background:var(--success-light);border-radius:var(--radius);padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:var(--success-dark)" id="srCorrect">0</div>
+          <div style="font-size:.72rem;color:var(--success-dark);font-weight:600">Correct</div>
+        </div>
+        <div style="background:var(--danger-light);border-radius:var(--radius);padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:var(--danger-dark)" id="srWrong">0</div>
+          <div style="font-size:.72rem;color:var(--danger-dark);font-weight:600">Wrong</div>
+        </div>
+        <div style="background:var(--primary-light);border-radius:var(--radius);padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:var(--primary)" id="srTotal">0</div>
+          <div style="font-size:.72rem;color:var(--primary);font-weight:600">Attempted</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:.75rem">
+        <button class="btn btn-primary" onclick="beginStudySession()">🔀 Study Again (New Shuffle)</button>
+        <button class="btn btn-secondary" onclick="showStudySetup()">⚙️ Change Settings</button>
+        <button class="btn btn-ghost" onclick="goToPage('dashboardPage')">← Back to Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END STUDY MODE PAGE -->
+
 <div id="toast"></div>
 
 <script>
@@ -1044,13 +1442,17 @@ function goToPage(id, el) {
   document.querySelectorAll('.nav-tab').forEach(n => n.classList.remove('active'));
   if (el) el.classList.add('active');
   else {
-    const map = { dashboardPage:0, historyPage:1, analyticsPage:2 };
+    const map = { dashboardPage:0, historyPage:1, analyticsPage:2, studyPage:3 };
     const idx = map[id];
     if (idx !== undefined) document.querySelectorAll('.nav-tab')[idx]?.classList.add('active');
   }
   if (id === 'dashboardPage') renderDashboard();
   if (id === 'historyPage') renderHistory();
   if (id === 'analyticsPage') renderAnalytics();
+  if (id === 'studyPage') {
+    showStudySetup();
+    if (!pastQuestionsLoaded) loadPastQuestions();
+  }
 }
 
 // ════════════════════════════════════════════════════
@@ -1912,10 +2314,338 @@ window.addEventListener('DOMContentLoaded', () => {
       toast('⚠️ Could not load question bank. Please refresh.');
     });
 
+  // Pre-load past questions in background
+  loadPastQuestions();
+
   document.addEventListener('keydown', e => {
     if (e.key === 'F9') toggleCalc();
   });
 });
+
+// ════════════════════════════════════════════════════
+//  STUDY MODE — ALL NEW FUNCTIONS (nothing removed above)
+// ════════════════════════════════════════════════════
+
+// Study mode state
+let PAST_QUESTIONS = [];
+let pastQuestionsLoaded = false;
+let studySession = {
+  questions: [],       // selected & shuffled questions for this session
+  currentIndex: 0,
+  answers: {},         // index → { picked, correct }
+  count: 10,
+  order: 'random'
+};
+
+// ── Load past_questions.json ──
+async function loadPastQuestions() {
+  try {
+    const res = await fetch('past_questions.json');
+    if (!res.ok) throw new Error('Failed to load past questions');
+    PAST_QUESTIONS = await res.json();
+    pastQuestionsLoaded = true;
+    updateStudySetupInfo();
+    const btn = $('beginStudyBtn');
+    if (btn) btn.disabled = false;
+    console.log(`✅ Loaded ${PAST_QUESTIONS.length} past questions`);
+  } catch (err) {
+    console.error('Error loading past questions:', err);
+    const info = $('studySetupInfo');
+    if (info) {
+      info.style.background = 'var(--danger-light)';
+      info.style.color = 'var(--danger-dark)';
+      info.textContent = '⚠️ Could not load past questions. Make sure past_questions.json is in the same folder.';
+    }
+  }
+}
+
+// ── Update the info text on setup screen ──
+function updateStudySetupInfo() {
+  const info = $('studySetupInfo');
+  if (!info || !pastQuestionsLoaded) return;
+  const total = PAST_QUESTIONS.length;
+  const count = studySession.count === 'all' ? total : Math.min(studySession.count, total);
+  info.style.background = 'var(--primary-light)';
+  info.style.color = 'var(--primary)';
+  info.textContent = `📚 ${total} past questions loaded · You'll practice ${count} question${count !== 1 ? 's' : ''} (${studySession.order === 'random' ? '🔀 randomized' : '📋 sequential'})`;
+}
+
+// ── Select how many questions ──
+function selectStudyCount(count, btn) {
+  studySession.count = count;
+  document.querySelectorAll('.study-count-btn[data-count]').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  updateStudySetupInfo();
+}
+
+// ── Select order ──
+function selectStudyOrder(order, btn) {
+  studySession.order = order;
+  document.querySelectorAll('.study-count-btn[data-order]').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  updateStudySetupInfo();
+}
+
+// ── Show the setup screen ──
+function showStudySetup() {
+  $('studySetupScreen').style.display = '';
+  $('studyActiveScreen').style.display = 'none';
+  $('studyCompleteScreen').classList.remove('visible');
+  updateStudySetupInfo();
+}
+
+// ── Begin a study session ──
+function beginStudySession() {
+  if (!pastQuestionsLoaded || PAST_QUESTIONS.length === 0) {
+    toast('⏳ Past questions are still loading. Please wait...');
+    return;
+  }
+
+  const pool = studySession.order === 'random'
+    ? shuffleArr([...PAST_QUESTIONS])
+    : [...PAST_QUESTIONS];
+
+  const count = studySession.count === 'all'
+    ? pool.length
+    : Math.min(studySession.count, pool.length);
+
+  studySession.questions = pool.slice(0, count);
+  studySession.currentIndex = 0;
+  studySession.answers = {};
+
+  $('studySetupScreen').style.display = 'none';
+  $('studyCompleteScreen').classList.remove('visible');
+  $('studyActiveScreen').style.display = '';
+
+  buildStudyPalette();
+  renderStudyQuestion();
+  updateStudyHeader();
+}
+
+// ── Build the mini palette ──
+function buildStudyPalette() {
+  const palette = $('studyPalette');
+  if (!palette) return;
+  palette.innerHTML = studySession.questions.map((_, i) =>
+    `<button class="sp-btn sp-unanswered" id="spb${i}" onclick="goToStudyQuestion(${i})" title="Question ${i+1}">${i+1}</button>`
+  ).join('');
+  updateStudyPalette();
+}
+
+// ── Update palette button states ──
+function updateStudyPalette() {
+  studySession.questions.forEach((_, i) => {
+    const btn = $(`spb${i}`);
+    if (!btn) return;
+    btn.className = 'sp-btn';
+    const ans = studySession.answers[i];
+    if (i === studySession.currentIndex) btn.classList.add('sp-current');
+    else if (ans && ans.picked === ans.correct) btn.classList.add('sp-correct');
+    else if (ans && ans.picked !== ans.correct) btn.classList.add('sp-wrong');
+    else btn.classList.add('sp-unanswered');
+  });
+}
+
+// ── Update sticky header stats ──
+function updateStudyHeader() {
+  const total = studySession.questions.length;
+  const answered = Object.keys(studySession.answers).length;
+  const correct = Object.values(studySession.answers).filter(a => a.picked === a.correct).length;
+  const wrong = answered - correct;
+  const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+  const fill = $('studyProgressFill');
+  const text = $('studyProgressText');
+  if (fill) fill.style.width = pct + '%';
+  if (text) text.textContent = `${studySession.currentIndex + 1} / ${total}`;
+  if ($('studyScoreCorrect')) $('studyScoreCorrect').textContent = correct;
+  if ($('studyScoreWrong')) $('studyScoreWrong').textContent = wrong;
+  if ($('studyHeaderSub')) $('studyHeaderSub').textContent = `${answered}/${total} answered · Q${studySession.currentIndex + 1}`;
+}
+
+// ── Render a study question ──
+function renderStudyQuestion() {
+  const { questions, currentIndex, answers } = studySession;
+  const q = questions[currentIndex];
+  if (!q) return;
+
+  // Header info
+  if ($('studyQNum')) $('studyQNum').textContent = currentIndex + 1;
+  if ($('studyQTopic')) $('studyQTopic').textContent = q.topic || 'General';
+  if ($('studyQSource')) $('studyQSource').textContent = q.source || 'Past Question';
+  if ($('studyQProgress')) $('studyQProgress').textContent = `${currentIndex + 1} / ${questions.length}`;
+  if ($('studyQText')) $('studyQText').textContent = q.question;
+
+  const existingAnswer = answers[currentIndex];
+  const alreadyAnswered = !!existingAnswer;
+
+  // Build options
+  const optsList = $('studyOptsList');
+  if (!optsList) return;
+  optsList.innerHTML = Object.entries(q.options).map(([key, val]) => {
+    let extraClass = '';
+    let icon = '';
+    if (alreadyAnswered) {
+      if (key === q.correct) {
+        extraClass = 'answered opt-correct';
+        icon = '✓';
+      } else if (key === existingAnswer.picked) {
+        extraClass = 'answered opt-wrong';
+        icon = '✗';
+      } else {
+        extraClass = 'answered';
+        icon = '';
+      }
+    }
+    return `<div class="study-option ${extraClass}" onclick="selectStudyAnswer('${key}')">
+      <div class="study-opt-key">${key}</div>
+      <div class="study-opt-text">${val}</div>
+      ${icon ? `<div class="study-opt-icon">${icon === '✓' ? '✅' : '❌'}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Feedback and explanation
+  const feedback = $('studyFeedback');
+  const explanation = $('studyExplanation');
+  const explanationText = $('studyExplanationText');
+
+  if (alreadyAnswered) {
+    const isCorrect = existingAnswer.picked === q.correct;
+    if (feedback) {
+      feedback.className = 'study-feedback visible ' + (isCorrect ? 'fb-correct' : 'fb-wrong');
+      feedback.textContent = isCorrect
+        ? `✅ Correct! The answer is ${q.correct}.`
+        : `❌ Wrong. You picked ${existingAnswer.picked}. Correct answer is ${q.correct}.`;
+    }
+    if (explanation) explanation.className = 'study-explanation visible';
+    if (explanationText) explanationText.textContent = q.explanation || 'No explanation available.';
+  } else {
+    if (feedback) feedback.className = 'study-feedback';
+    if (explanation) explanation.className = 'study-explanation';
+    if (explanationText) explanationText.textContent = '';
+  }
+
+  // Nav button states
+  if ($('studyPrevBtn')) $('studyPrevBtn').disabled = currentIndex === 0;
+  const isLast = currentIndex === questions.length - 1;
+  if ($('studyNextBtn')) {
+    $('studyNextBtn').textContent = isLast ? 'Finish Session →' : 'Next →';
+  }
+
+  updateStudyPalette();
+  updateStudyHeader();
+}
+
+// ── Student picks an answer ──
+function selectStudyAnswer(key) {
+  const { questions, currentIndex, answers } = studySession;
+  if (answers[currentIndex]) return; // already answered — no changing
+
+  const q = questions[currentIndex];
+  studySession.answers[currentIndex] = { picked: key, correct: q.correct };
+
+  const isCorrect = key === q.correct;
+
+  // Update all options to show correct/wrong state
+  document.querySelectorAll('.study-option').forEach((opt, idx) => {
+    const optKey = opt.querySelector('.study-opt-key').textContent;
+    opt.classList.add('answered');
+    if (optKey === q.correct) {
+      opt.classList.add('opt-correct');
+      const icon = document.createElement('div');
+      icon.className = 'study-opt-icon';
+      icon.textContent = '✅';
+      opt.appendChild(icon);
+    } else if (optKey === key && !isCorrect) {
+      opt.classList.add('opt-wrong');
+      const icon = document.createElement('div');
+      icon.className = 'study-opt-icon';
+      icon.textContent = '❌';
+      opt.appendChild(icon);
+    }
+  });
+
+  // Show feedback
+  const feedback = $('studyFeedback');
+  if (feedback) {
+    feedback.className = 'study-feedback visible ' + (isCorrect ? 'fb-correct' : 'fb-wrong');
+    feedback.textContent = isCorrect
+      ? `✅ Correct! The answer is ${q.correct}.`
+      : `❌ Wrong. You picked ${key}. Correct answer is ${q.correct}.`;
+  }
+
+  // Show explanation
+  const explanation = $('studyExplanation');
+  const explanationText = $('studyExplanationText');
+  if (explanation) explanation.className = 'study-explanation visible';
+  if (explanationText) explanationText.textContent = q.explanation || 'No explanation available for this question.';
+
+  updateStudyPalette();
+  updateStudyHeader();
+}
+
+// ── Navigate between questions ──
+function navStudy(dir) {
+  const next = studySession.currentIndex + dir;
+  if (next < 0) return;
+  if (next >= studySession.questions.length) {
+    // Finished — show completion screen
+    showStudyComplete();
+    return;
+  }
+  goToStudyQuestion(next);
+}
+
+function goToStudyQuestion(i) {
+  studySession.currentIndex = i;
+  renderStudyQuestion();
+  // Scroll to top of card
+  const card = $('studyCard');
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Show study complete screen ──
+function showStudyComplete() {
+  $('studyActiveScreen').style.display = 'none';
+  const total = studySession.questions.length;
+  const answered = Object.keys(studySession.answers).length;
+  const correct = Object.values(studySession.answers).filter(a => a.picked === a.correct).length;
+  const wrong = answered - correct;
+  const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+  const circle = $('studyResultCircle');
+  const color = pct >= 70 ? '#22c55e' : pct >= 50 ? '#f59e0b' : '#ef4444';
+  if (circle) {
+    circle.style.borderColor = color;
+    circle.style.color = color;
+  }
+  if ($('studyResultPct')) $('studyResultPct').textContent = pct + '%';
+  if ($('studyResultTitle')) {
+    $('studyResultTitle').textContent = pct >= 70 ? '🎉 Excellent Work!' : pct >= 50 ? '👍 Good Effort!' : '📚 Keep Studying!';
+  }
+  if ($('studyResultMsg')) {
+    $('studyResultMsg').textContent = `You answered ${answered} of ${total} questions · Got ${correct} correct (${pct}%)`;
+  }
+  if ($('srCorrect')) $('srCorrect').textContent = correct;
+  if ($('srWrong')) $('srWrong').textContent = wrong;
+  if ($('srTotal')) $('srTotal').textContent = answered;
+
+  const comp = $('studyCompleteScreen');
+  if (comp) comp.classList.add('visible');
+}
+
+// ── Exit study mode → go to dashboard ──
+function exitStudyMode() {
+  if (Object.keys(studySession.answers).length > 0) {
+    if (!confirm('Exit study session? Your current progress will be lost.')) return;
+  }
+  studySession = { questions: [], currentIndex: 0, answers: {}, count: studySession.count, order: studySession.order };
+  $('studyActiveScreen').style.display = 'none';
+  $('studyCompleteScreen').classList.remove('visible');
+  $('studySetupScreen').style.display = '';
+  goToPage('dashboardPage');
+}
+
 </script>
 </body>
 </html>
