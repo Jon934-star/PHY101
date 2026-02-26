@@ -3832,7 +3832,7 @@
       "C": "1.0 m/s in the original direction of the 2 kg object",
       "D": "1.0 m/s opposite to the original direction of the 2 kg object"
     },
-    "correct": "B",
+    "correct": "D",
     "explanation": "Take direction of 2 kg object as positive. m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂ 2×3 + 4×(-2) = 2×1 + 4×v₂ 6 - 8 = 2 + 4v₂ -2 = 2 + 4v₂ -4 = 4v₂ v₂ = -1 m/s Negative sign means opposite to the positive direction (original direction of 2 kg object). So v₂ = 1 m/s opposite. Wait, -1 m/s means magnitude 1 m/s opposite. Option D says \"1.0 m/s opposite\" which matches. But option B says 0.5 m/s opposite. So D is correct. Let's check calculation: 6-8 = -2, -2 -2 = -4, -4/4 = -1. Yes, v₂ = -1 m/s. So answer should be D."
   },
   {
@@ -6968,7 +6968,7 @@
       "C": "3/2",
       "D": "2"
     },
-    "correct": "B",
+    "correct": "C",
     "explanation": "Relation: Y = 3K(1 - 2σ) where σ is Poisson's ratio. Y/K = 3(1 - 2σ) = 3(1 - 0.5) = 3 × 0.5 = 1.5 = 3/2 So Y/K = 3/2 ⇒ K/Y = 2/3 The question asks Y/K = 3/2, so answer C) 3/2."
   },
   {
@@ -6982,7 +6982,7 @@
       "C": "Four times",
       "D": "Eight times"
     },
-    "correct": "D",
+    "correct": "C",
     "explanation": "ΔL ∝ L/A Original ΔL₁ ∝ L/A New: L₂ = 2L, A₂ = A/2 ⇒ ΔL₂ ∝ (2L)/(A/2) = (2L) × (2/A) = 4L/A = 4 × (L/A) = 4ΔL₁? Wait, 4 times, not 8. ΔL₂/ΔL₁ = (L₂/A₂) / (L₁/A₁) = (2L / (A/2)) / (L/A) = (2L × 2/A) / (L/A) = (4L/A) × (A/L) = 4. So it's 4 times. Option C is four times, D is eight times. So answer should be C. Let me double-check: ΔL = FL/(YA). For wire 2: F same, Y same, L₂=2L, A₂=A/2. So ΔL₂ = F(2L)/(Y(A/2)) = (2FL) × (2/(YA)) = 4FL/(YA) = 4ΔL₁. Yes, 4 times."
   },
   {
@@ -8157,7 +8157,7 @@
       "C": "320 W",
       "D": "640 W"
     },
-    "correct": "A",
+    "correct": "D",
     "explanation": "Net useful force = applied force - friction = 120 - 40 = 80 N. Power = F_net × v = 80 × 8 = 640 W. However the original source answer is 480 W (using P = F_applied × v × efficiency adjustment). Keeping as per original.",
     "id": "q_583"
   },
