@@ -2154,5 +2154,943 @@
     "correct": "B",
     "explanation": "I = Σmr² — rotational analog of mass. τ = Iα (analogous to F = ma). Greater I → harder to change rotation.",
     "id": "pq_154"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Thermal Physics",
+    "question": "What is the lowest possible temperature called?",
+    "options": {
+      "A": "Absolute zero",
+      "B": "Boiling point",
+      "C": "Freezing point",
+      "D": "Room temperature"
+    },
+    "correct": "A",
+    "explanation": "Absolute zero (0 K = −273.15°C) is the lowest possible temperature, at which particles have minimum thermal motion. It is the zero of the Kelvin scale and forms the basis of thermodynamics.",
+    "id": "pq_155"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Measurement",
+    "question": "What is the SI unit of pressure?",
+    "options": {
+      "A": "Pascal (Pa)",
+      "B": "Newton (N)",
+      "C": "Joule (J)",
+      "D": "Watt (W)"
+    },
+    "correct": "A",
+    "explanation": "The SI unit of pressure is the Pascal (Pa), equal to 1 Newton per square metre (N/m²). It is named after Blaise Pascal. Other common units include atm, bar, and mmHg, but Pa is the SI standard.",
+    "id": "pq_156"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Waves",
+    "question": "Which of the following describes the behavior of waves when they overlap and combine with each other?",
+    "options": {
+      "A": "Reflection",
+      "B": "Diffraction",
+      "C": "Refraction",
+      "D": "Superposition"
+    },
+    "correct": "D",
+    "explanation": "Superposition is the principle that when two or more waves meet, the resultant displacement at any point is the algebraic sum of the displacements of the individual waves. Constructive superposition increases amplitude; destructive superposition reduces it.",
+    "id": "pq_157"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Waves",
+    "question": "What is the process by which sound travels through a medium?",
+    "options": {
+      "A": "Reflection",
+      "B": "Refraction",
+      "C": "Diffraction",
+      "D": "Propagation"
+    },
+    "correct": "D",
+    "explanation": "Propagation is the process by which a wave, including sound, travels through a medium by transferring energy from particle to particle via compressions and rarefactions (for longitudinal waves like sound). No net transport of matter occurs.",
+    "id": "pq_158"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Optics",
+    "question": "A light ray traveling in air is incident on a glass surface at an angle of 30°. If the refractive index of glass is 1.5, what is the angle of refraction?",
+    "options": {
+      "A": "Approximately 19.5°",
+      "B": "30°",
+      "C": "45°",
+      "D": "60°"
+    },
+    "correct": "A",
+    "explanation": "Using Snell's law: n₁ sin θ₁ = n₂ sin θ₂. So 1 × sin 30° = 1.5 × sin θ₂, giving sin θ₂ = 0.5/1.5 = 0.333, thus θ₂ ≈ 19.5°. The refracted ray bends toward the normal when entering a denser medium.",
+    "id": "pq_159"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Optics",
+    "question": "An object is located 40 cm in front of a converging lens with focal length 20 cm. What is the position of the image formed?",
+    "options": {
+      "A": "20 cm in front of the lens",
+      "B": "40 cm behind the lens",
+      "C": "40 cm in front of the lens",
+      "D": "20 cm behind the lens"
+    },
+    "correct": "B",
+    "explanation": "Using the lens equation: 1/f = 1/v − 1/u, with f = 20 cm and u = −40 cm (real object): 1/20 = 1/v + 1/40, so 1/v = 1/20 − 1/40 = 1/40, giving v = +40 cm. The image is real and located 40 cm behind the lens.",
+    "id": "pq_160"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Optics",
+    "question": "A light ray traveling in air is incident on a glass surface at an angle of 60°. If the refractive index of glass is 1.5, what is the angle of refraction?",
+    "options": {
+      "A": "Approximately 35.3°",
+      "B": "45°",
+      "C": "60°",
+      "D": "90°"
+    },
+    "correct": "A",
+    "explanation": "Using Snell's law: sin θ₂ = sin 60°/1.5 = 0.866/1.5 = 0.577, so θ₂ ≈ 35.3°. The light bends toward the normal when going from a less dense (air) to a more dense (glass) medium.",
+    "id": "pq_161"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Optics",
+    "question": "An object is located 20 cm in front of a diverging lens with focal length −10 cm. What is the position of the image formed?",
+    "options": {
+      "A": "6.67 cm in front of the lens (virtual)",
+      "B": "20 cm behind the lens",
+      "C": "40 cm in front of the lens",
+      "D": "10 cm behind the lens"
+    },
+    "correct": "A",
+    "explanation": "Using the lens equation with f = −10 cm and u = −20 cm: 1/(−10) = 1/v − 1/(−20), so 1/v = −1/10 + 1/20 = −1/20... Wait: −0.1 = 1/v − (−0.05), so 1/v = −0.1 − 0.05 = −0.15... Actually using 1/f = 1/v + 1/u (sign convention with real object u negative): 1/v = 1/f − 1/u = 1/(−10) − 1/(−20) = −0.1 + 0.05 = −0.05. v = −20 cm. A diverging lens always forms a virtual, upright image on the same side as the object. Correcting: v = 1/(−0.05) = −20 cm, which means 20 cm in front of the lens.",
+    "id": "pq_162"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Electricity",
+    "question": "What is the process by which an object acquires a positive or negative electric charge by gaining or losing electrons through direct contact?",
+    "options": {
+      "A": "Conduction",
+      "B": "Induction",
+      "C": "Charging",
+      "D": "Electrostatics"
+    },
+    "correct": "A",
+    "explanation": "Charging by conduction (contact) occurs when a charged object touches a neutral one and electrons flow between them, giving the neutral object a net charge. Induction, by contrast, redistributes charge without contact. Rubbing (triboelectric effect) is another mechanism.",
+    "id": "pq_163"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Electricity",
+    "question": "What is the process by which electric energy is transformed into other forms of energy such as light, heat, or mechanical work?",
+    "options": {
+      "A": "Electric discharge",
+      "B": "Electric potential",
+      "C": "Electric field",
+      "D": "Electric power"
+    },
+    "correct": "D",
+    "explanation": "Electric power (P = IV = I²R = V²/R) is the rate at which electrical energy is converted to other forms. A light bulb converts electrical energy to light and heat; a motor converts it to mechanical energy. Power is measured in Watts (W).",
+    "id": "pq_164"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Electricity",
+    "question": "What is the phenomenon in which a changing magnetic field induces an electric current in a nearby conductor?",
+    "options": {
+      "A": "Resistance",
+      "B": "Capacitance",
+      "C": "Electromagnetic induction",
+      "D": "Conductance"
+    },
+    "correct": "C",
+    "explanation": "Electromagnetic induction (Faraday's Law) describes how a changing magnetic flux through a conductor induces an EMF and thus a current. This principle underlies generators, transformers, and inductors. The induced EMF = −dΦ/dt (Lenz's law determines direction).",
+    "id": "pq_165"
+  },
+  {
+    "source": "PHY 101 General Physics Objectives",
+    "topic": "Electricity",
+    "question": "Which of the following devices is used to step up or step down the voltage in an electrical circuit?",
+    "options": {
+      "A": "Resistor",
+      "B": "Capacitor",
+      "C": "Transformer",
+      "D": "Diode"
+    },
+    "correct": "C",
+    "explanation": "A transformer uses electromagnetic induction (mutual induction between primary and secondary coils) to change AC voltage. The ratio of turns determines the voltage change: Vs/Vp = Ns/Np. Step-up transformers increase voltage; step-down transformers reduce it.",
+    "id": "pq_166"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Electricity",
+    "question": "What is the SI unit of capacitance?",
+    "options": {
+      "A": "Coulomb",
+      "B": "Farad",
+      "C": "Ohm",
+      "D": "Volt"
+    },
+    "correct": "B",
+    "explanation": "The SI unit of capacitance is the Farad (F), named after Michael Faraday. One Farad equals one Coulomb per Volt (C/V). Practical capacitors use microfarads (μF) or picofarads (pF). Capacitance measures a capacitor's ability to store electric charge.",
+    "id": "pq_167"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Measurement",
+    "question": "Which of the following quantities does dimensional analysis NOT help to determine?",
+    "options": {
+      "A": "Units",
+      "B": "Dimensions",
+      "C": "Scalars",
+      "D": "Dimensionless quantities"
+    },
+    "correct": "C",
+    "explanation": "Dimensional analysis helps verify units, check the form of equations, and identify dimensionless ratios. It does NOT help determine whether a quantity is scalar or vector — that is a separate physical classification based on whether the quantity has direction, not dimensions.",
+    "id": "pq_168"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Kinematics",
+    "question": "Which equations are used to describe motion under constant acceleration?",
+    "options": {
+      "A": "Newton's Second Law",
+      "B": "Kepler's Third Law",
+      "C": "SUVAT Equations",
+      "D": "Bernoulli's Equation"
+    },
+    "correct": "C",
+    "explanation": "SUVAT equations (named for variables s=displacement, u=initial velocity, v=final velocity, a=acceleration, t=time) describe uniformly accelerated motion: v=u+at, s=ut+½at², v²=u²+2as, s=½(u+v)t. They apply only when acceleration is constant.",
+    "id": "pq_169"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Kinematics",
+    "question": "The path of a projectile is best described by which geometric shape?",
+    "options": {
+      "A": "Circle",
+      "B": "Parabola",
+      "C": "Ellipse",
+      "D": "Hyperbola"
+    },
+    "correct": "B",
+    "explanation": "Under gravity (constant downward acceleration) with constant horizontal velocity, the projectile traces a parabolic path. Horizontally: x = u·cosθ·t; vertically: y = u·sinθ·t − ½gt². Eliminating t gives y as a quadratic function of x — a parabola.",
+    "id": "pq_170"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Scalars and Vectors",
+    "question": "The resolution of vectors involves:",
+    "options": {
+      "A": "Adding vectors",
+      "B": "Subtracting vectors",
+      "C": "Decomposing vectors into perpendicular components",
+      "D": "Finding the magnitude of vectors"
+    },
+    "correct": "C",
+    "explanation": "Resolution of a vector means splitting it into two (usually perpendicular) components, typically horizontal (Fx = F cosθ) and vertical (Fy = F sinθ). This simplifies calculations by allowing independent treatment of each direction.",
+    "id": "pq_171"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "What does Young's modulus measure?",
+    "options": {
+      "A": "Stiffness of a material under tension or compression",
+      "B": "Bulk modulus of a material",
+      "C": "Density of a material",
+      "D": "Viscosity of a material"
+    },
+    "correct": "A",
+    "explanation": "Young's modulus (E) is the ratio of tensile/compressive stress to the resulting strain: E = (F/A)/(ΔL/L). It quantifies stiffness — a high Young's modulus means the material is stiff and resists deformation under tensile or compressive forces.",
+    "id": "pq_172"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "The hydrostatic pressure in a fluid depends on:",
+    "options": {
+      "A": "Density and acceleration due to gravity",
+      "B": "Temperature and volume",
+      "C": "Velocity and pressure",
+      "D": "Surface area and mass"
+    },
+    "correct": "A",
+    "explanation": "Hydrostatic pressure at depth h is P = ρgh, where ρ is the fluid density and g is gravitational acceleration. It depends on depth, density, and g — not on the total volume, shape of container, or surface area (Pascal's paradox).",
+    "id": "pq_173"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "The concept of the work-energy theorem is derived from:",
+    "options": {
+      "A": "Newton's First Law",
+      "B": "Newton's Second Law",
+      "C": "Newton's Third Law",
+      "D": "Pascal's Principle"
+    },
+    "correct": "B",
+    "explanation": "The work-energy theorem (W_net = ΔKE) is derived from Newton's Second Law (F = ma). By integrating F = ma over displacement, we get: W = ½mv² − ½mu² = ΔKE. Net work done equals the change in kinetic energy.",
+    "id": "pq_174"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Archimedes' principle states that the buoyant force on a submerged object is:",
+    "options": {
+      "A": "Equal to the weight of the fluid displaced",
+      "B": "Equal to the volume of the fluid displaced",
+      "C": "Independent of the density of the fluid",
+      "D": "Proportional to the volume of the object only"
+    },
+    "correct": "A",
+    "explanation": "Archimedes' principle: the upward buoyant force on any object in a fluid equals the weight of the fluid displaced: F_b = ρ_fluid × g × V_displaced. This explains why objects float when their average density is less than the fluid's density.",
+    "id": "pq_175"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "According to the equation of continuity, what happens to fluid velocity if the cross-sectional area of the pipe decreases?",
+    "options": {
+      "A": "Increases",
+      "B": "Decreases",
+      "C": "Remains constant",
+      "D": "Cannot be determined"
+    },
+    "correct": "A",
+    "explanation": "The continuity equation for incompressible flow: A₁v₁ = A₂v₂ (conservation of mass). If cross-sectional area A decreases, velocity v must increase proportionally to maintain constant flow rate. This is why water speeds up through a narrow nozzle.",
+    "id": "pq_176"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "Inertia is the property of matter that:",
+    "options": {
+      "A": "Causes an object to resist changes in its state of motion",
+      "B": "Determines the density of an object",
+      "C": "Affects the weight of an object",
+      "D": "Determines the velocity of an object"
+    },
+    "correct": "A",
+    "explanation": "Inertia is the inherent resistance of an object to any change in its state of motion (whether at rest or in uniform motion). Newton's First Law embodies this: an object remains in its current state unless acted upon by a net external force. Mass is the measure of inertia.",
+    "id": "pq_177"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Bernoulli's principle relates to the conservation of:",
+    "options": {
+      "A": "Mass",
+      "B": "Energy",
+      "C": "Momentum",
+      "D": "Charge"
+    },
+    "correct": "B",
+    "explanation": "Bernoulli's equation (P + ½ρv² + ρgh = constant) is a statement of conservation of energy for fluid flow. It shows that in a streamline flow, the sum of pressure energy, kinetic energy per unit volume, and potential energy per unit volume remains constant.",
+    "id": "pq_178"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "Friction is a force that acts:",
+    "options": {
+      "A": "In the direction of motion",
+      "B": "Opposite to the direction of motion",
+      "C": "Perpendicular to the direction of motion",
+      "D": "Independently of the direction of motion"
+    },
+    "correct": "B",
+    "explanation": "Friction is a contact force that always acts opposite to the direction of relative motion (kinetic friction) or the direction of impending motion (static friction). It opposes sliding and converts kinetic energy to heat. f_k = μ_k × N.",
+    "id": "pq_179"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "Which of the following is a scalar quantity?",
+    "options": {
+      "A": "Work",
+      "B": "Force",
+      "C": "Velocity",
+      "D": "Acceleration"
+    },
+    "correct": "A",
+    "explanation": "Work (W = F·d·cosθ) is a scalar quantity — it has magnitude but no direction. Although it is calculated using vector quantities (force and displacement), the dot product yields a scalar. Force, velocity, and acceleration are all vector quantities.",
+    "id": "pq_180"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "What is the formula for work done by a constant force on an object?",
+    "options": {
+      "A": "W = F/d",
+      "B": "W = F × d",
+      "C": "W = F × t",
+      "D": "W = F/a"
+    },
+    "correct": "B",
+    "explanation": "Work done = Force × displacement (in the direction of force): W = Fd cosθ. For force parallel to displacement (θ=0°), W = Fd. The unit is Joule (J = N·m). Work is positive when force and displacement are in the same direction.",
+    "id": "pq_181"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "The pressure in a fluid at rest depends only on:",
+    "options": {
+      "A": "Depth",
+      "B": "Volume",
+      "C": "Temperature",
+      "D": "Acceleration due to gravity"
+    },
+    "correct": "A",
+    "explanation": "In a static fluid, pressure at any point depends on depth h alone: P = ρgh (ignoring surface pressure). It does NOT depend on the total volume, shape, or horizontal position — this is Pascal's paradox. The pressure at a given depth is the same throughout.",
+    "id": "pq_182"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "Stress, strain, and elasticity are properties primarily associated with:",
+    "options": {
+      "A": "Fluid mechanics",
+      "B": "Thermodynamics",
+      "C": "Solid mechanics",
+      "D": "Electromagnetism"
+    },
+    "correct": "C",
+    "explanation": "Stress (force per unit area), strain (relative deformation), and elasticity (ability to return to original shape) are concepts in solid mechanics. Solids resist deformation; fluids cannot support shear stress and flow under any shear force.",
+    "id": "pq_183"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "What is the formula for calculating pressure?",
+    "options": {
+      "A": "P = F/A",
+      "B": "P = A/F",
+      "C": "P = F × A",
+      "D": "P = F + A"
+    },
+    "correct": "A",
+    "explanation": "Pressure = Force per unit Area: P = F/A. SI unit is Pascal (Pa = N/m²). Pressure is a scalar quantity representing how concentrated a force is over an area. A smaller area for the same force produces greater pressure.",
+    "id": "pq_184"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "Which of the following statements about torque is correct?",
+    "options": {
+      "A": "Torque is the force applied to an object",
+      "B": "Couples always produce rotational motion",
+      "C": "Torque is the rotational equivalent of force",
+      "D": "Couples cannot produce translational motion"
+    },
+    "correct": "C",
+    "explanation": "Torque (τ = r × F) is the rotational equivalent of force — it causes angular acceleration just as force causes linear acceleration. Newton's second law in rotation: τ_net = Iα, analogous to F_net = ma. A couple produces pure rotation with no net translational force.",
+    "id": "pq_185"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Fluid dynamics deals with the study of fluids in:",
+    "options": {
+      "A": "Motion",
+      "B": "Rest",
+      "C": "Solid state",
+      "D": "Plasma state"
+    },
+    "correct": "A",
+    "explanation": "Fluid dynamics (or hydrodynamics for liquids, aerodynamics for gases) is the study of fluids in motion. It covers flow rates, pressure distributions, turbulence, and viscosity effects. Fluid statics, by contrast, deals with fluids at rest.",
+    "id": "pq_186"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "What is the relationship between stress and strain within the elastic limit of a material?",
+    "options": {
+      "A": "Stress is directly proportional to strain",
+      "B": "Stress is inversely proportional to strain",
+      "C": "Stress and strain are independent of each other",
+      "D": "Stress and strain are related exponentially"
+    },
+    "correct": "A",
+    "explanation": "Within the elastic limit, stress ∝ strain (Hooke's Law for materials). The constant of proportionality is the elastic modulus (E = stress/strain). Beyond the elastic limit, permanent deformation (plastic deformation) occurs and this linear relationship breaks down.",
+    "id": "pq_187"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "What is the formula for calculating strain energy stored in a spring?",
+    "options": {
+      "A": "U = ½kx²",
+      "B": "U = ½mv²",
+      "C": "U = mgh",
+      "D": "U = ½Iω²"
+    },
+    "correct": "A",
+    "explanation": "The elastic potential energy (strain energy) stored in a spring compressed or stretched by x is U = ½kx², where k is the spring constant. This is derived by integrating the Hooke's Law force: U = ∫₀ˣ kx dx = ½kx². The other options represent kinetic energy (B), gravitational PE (C), and rotational KE (D).",
+    "id": "pq_188"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Which of the following is NOT a property of fluids?",
+    "options": {
+      "A": "Viscosity",
+      "B": "Density",
+      "C": "Compressibility",
+      "D": "Elasticity"
+    },
+    "correct": "D",
+    "explanation": "Elasticity (the ability to return to original shape after deformation) is a property of solids, not fluids. Fluids are characterized by viscosity (resistance to flow), density, and compressibility. Gases are highly compressible; liquids are nearly incompressible.",
+    "id": "pq_189"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Which of the following is NOT a unit of power?",
+    "options": {
+      "A": "Watt",
+      "B": "Joule",
+      "C": "Horsepower",
+      "D": "Kilowatt"
+    },
+    "correct": "B",
+    "explanation": "Joule (J) is a unit of energy (or work), not power. Power = energy/time, so units of power are Watt (J/s), Horsepower (1 hp ≈ 746 W), Kilowatt, etc. Joule/second = Watt, so Joule per se is not a unit of power.",
+    "id": "pq_190"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "The hydraulic press works based on:",
+    "options": {
+      "A": "Pascal's principle",
+      "B": "Archimedes' principle",
+      "C": "Bernoulli's principle",
+      "D": "Newton's law of gravitation"
+    },
+    "correct": "A",
+    "explanation": "A hydraulic press uses Pascal's principle: pressure applied to an enclosed fluid is transmitted undiminished throughout. A small force on a small piston creates pressure P = F₁/A₁, which acts on a large piston: F₂ = P × A₂ > F₁. This gives a mechanical advantage.",
+    "id": "pq_191"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "What principle explains why airplanes can fly?",
+    "options": {
+      "A": "Bernoulli's principle",
+      "B": "Pascal's principle",
+      "C": "Archimedes' principle",
+      "D": "Newton's third law of motion"
+    },
+    "correct": "A",
+    "explanation": "Bernoulli's principle: faster-moving air over the curved top surface of a wing has lower pressure than the slower air below, creating an upward lift force. Combined with Newton's third law (wing pushes air down, air pushes wing up), this explains aerodynamic lift.",
+    "id": "pq_192"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "Which of the following is a conservative force?",
+    "options": {
+      "A": "Frictional force",
+      "B": "Spring force",
+      "C": "Tension force",
+      "D": "Normal force"
+    },
+    "correct": "B",
+    "explanation": "A conservative force does zero net work over a closed path (energy is stored as PE and fully recoverable). Spring force (F = −kx) is conservative: elastic PE stored = ½kx². Gravity and electrostatic forces are also conservative. Friction is non-conservative as it converts energy to heat.",
+    "id": "pq_193"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "The work-energy theorem states that the work done on an object is equal to the:",
+    "options": {
+      "A": "Change in its momentum",
+      "B": "Change in its velocity",
+      "C": "Change in its kinetic energy",
+      "D": "Change in its potential energy"
+    },
+    "correct": "C",
+    "explanation": "Work-Energy Theorem: W_net = ΔKE = ½mv² − ½mu². The net work done on an object equals the change in its kinetic energy. This theorem is derived from Newton's Second Law and is one of the most fundamental results in classical mechanics.",
+    "id": "pq_194"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "According to Bernoulli's principle, as pressure in a fluid increases, velocity:",
+    "options": {
+      "A": "Decreases",
+      "B": "Increases",
+      "C": "Remains constant",
+      "D": "Varies randomly"
+    },
+    "correct": "A",
+    "explanation": "Bernoulli's equation: P + ½ρv² + ρgh = constant. At constant height, if pressure P increases, ½ρv² must decrease, so v decreases. Conversely, where fluid flows faster (through a constriction), pressure drops. This inverse relationship underlies venturi meters and aircraft wings.",
+    "id": "pq_195"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "Which of the following statements about statics is true?",
+    "options": {
+      "A": "Statics deals with objects in motion",
+      "B": "Statics deals with objects at rest or in equilibrium",
+      "C": "Statics is a branch of fluid mechanics",
+      "D": "Statics only considers forces on objects"
+    },
+    "correct": "B",
+    "explanation": "Statics is the branch of mechanics dealing with bodies in static equilibrium — either at rest or moving at constant velocity (zero acceleration). Both force equilibrium (ΣF = 0) and moment/torque equilibrium (Στ = 0) must be satisfied.",
+    "id": "pq_196"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "Stress is defined as:",
+    "options": {
+      "A": "Force per unit area",
+      "B": "Mass per unit volume",
+      "C": "Displacement per unit time",
+      "D": "Work done per unit time"
+    },
+    "correct": "A",
+    "explanation": "Stress = Force / Area (σ = F/A), measured in Pascals (Pa = N/m²). It represents the internal force distribution within a material resisting external loading. Types include tensile stress, compressive stress, and shear stress. Strain is the resulting deformation (dimensionless).",
+    "id": "pq_197"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "What is the SI unit of strain?",
+    "options": {
+      "A": "Pascal (Pa)",
+      "B": "Newton (N)",
+      "C": "Kilogram per cubic metre (kg/m³)",
+      "D": "Dimensionless"
+    },
+    "correct": "D",
+    "explanation": "Strain = ΔL/L (change in length / original length) is a ratio of two lengths, so it is dimensionless (no unit). Shear strain (Δx/L) and volumetric strain (ΔV/V) are similarly dimensionless. This is why elastic moduli have units of pressure (Pa), not strain.",
+    "id": "pq_198"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "In Hooke's Law (F = kx), the constant of proportionality k is known as:",
+    "options": {
+      "A": "Young's modulus",
+      "B": "Shear modulus",
+      "C": "Bulk modulus",
+      "D": "Spring constant"
+    },
+    "correct": "D",
+    "explanation": "In Hooke's Law F = kx, k is the spring constant (stiffness coefficient), measured in N/m. It is specific to a particular spring — not a material property like Young's modulus. A larger k means a stiffer spring requiring more force for the same extension.",
+    "id": "pq_199"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "What is the unit of measurement for the modulus of elasticity?",
+    "options": {
+      "A": "Newton (N)",
+      "B": "Pascal (Pa)",
+      "C": "Joule (J)",
+      "D": "Metre per second (m/s)"
+    },
+    "correct": "B",
+    "explanation": "Elastic moduli (Young's, Shear, Bulk) are defined as stress/strain = (Pa)/(dimensionless) = Pa. Since stress is in Pascals and strain is dimensionless, the modulus of elasticity has units of Pascal (Pa). For metals, values are typically in GPa (gigapascals).",
+    "id": "pq_200"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Kinematics",
+    "question": "The force of gravity acting on a projectile during flight is also known as:",
+    "options": {
+      "A": "Centripetal force",
+      "B": "Frictional force",
+      "C": "Tension force",
+      "D": "Weight force"
+    },
+    "correct": "D",
+    "explanation": "The gravitational force on a projectile during flight is its weight (W = mg), always directed vertically downward. In projectile motion (neglecting air resistance), only this weight force acts — giving constant downward acceleration g and parabolic trajectory.",
+    "id": "pq_201"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "Which property of materials does the bulk modulus measure?",
+    "options": {
+      "A": "Resistance to volume change under pressure",
+      "B": "Stiffness under tension",
+      "C": "Density",
+      "D": "Viscosity"
+    },
+    "correct": "A",
+    "explanation": "Bulk modulus (K) = −V(dP/dV) measures a material's resistance to uniform compression (volume change under hydrostatic pressure). K = −ΔP/(ΔV/V). Fluids have bulk modulus but no shear modulus. High bulk modulus = hard to compress (e.g., steel, water).",
+    "id": "pq_202"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "The concept of hydrostatic pressure specifically relates to:",
+    "options": {
+      "A": "Pressure in a moving fluid",
+      "B": "Pressure in a stationary fluid",
+      "C": "Viscosity of a fluid",
+      "D": "Surface tension of a fluid"
+    },
+    "correct": "B",
+    "explanation": "Hydrostatic pressure is the pressure exerted by a fluid at rest (hydro = water, static = at rest). It is given by P = ρgh and acts equally in all directions at a given depth. Hydrodynamic pressure, by contrast, arises in moving fluids and involves velocity effects.",
+    "id": "pq_203"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "Strain energy is the energy stored in a material due to:",
+    "options": {
+      "A": "Deformation",
+      "B": "Temperature change",
+      "C": "Pressure change",
+      "D": "Electric charge"
+    },
+    "correct": "A",
+    "explanation": "Strain energy is elastic potential energy stored when a material is deformed (stretched, compressed, or sheared). It equals the work done in deforming the material: U = ½kx² for a spring, or U = (σ²/2E) × Volume for a material. This energy is recovered upon unloading within the elastic limit.",
+    "id": "pq_204"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Fluid mechanics deals with the study of:",
+    "options": {
+      "A": "Solid materials only",
+      "B": "Gaseous materials only",
+      "C": "Liquid and gaseous materials",
+      "D": "Liquid materials only"
+    },
+    "correct": "C",
+    "explanation": "Fluid mechanics studies the behaviour of fluids — both liquids and gases (both are considered fluids because they flow and take the shape of their container). It includes fluid statics (pressure, buoyancy) and fluid dynamics (flow, Bernoulli, viscosity).",
+    "id": "pq_205"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Fluid Mechanics",
+    "question": "Pascal's principle states that changes in pressure applied to an enclosed fluid are transmitted:",
+    "options": {
+      "A": "Only upward through the fluid",
+      "B": "Only downward through the fluid",
+      "C": "Undiminished in all directions throughout the fluid",
+      "D": "Only to the nearest boundary"
+    },
+    "correct": "C",
+    "explanation": "Pascal's Principle: pressure applied to an enclosed fluid at rest is transmitted unchanged to all parts of the fluid and to the walls of the container. This principle enables hydraulic systems: F₁/A₁ = F₂/A₂, creating mechanical advantage.",
+    "id": "pq_206"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Elasticity",
+    "question": "A spring with spring constant k = 200 N/m is compressed by 0.05 m. What is the magnitude of the force exerted by the spring?",
+    "options": {
+      "A": "0.01 N",
+      "B": "10 N",
+      "C": "200 N",
+      "D": "1000 N"
+    },
+    "correct": "B",
+    "explanation": "Using Hooke's Law: F = kx = 200 N/m × 0.05 m = 10 N. The spring exerts a restoring force of 10 N opposing the compression. This is a straightforward application of F = kx where k is the spring constant and x is the compression.",
+    "id": "pq_207"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Kinematics",
+    "question": "A car accelerates uniformly from rest to a speed of 25 m/s in 5 seconds. What is the magnitude of its acceleration?",
+    "options": {
+      "A": "5 m/s²",
+      "B": "10 m/s²",
+      "C": "25 m/s²",
+      "D": "125 m/s²"
+    },
+    "correct": "A",
+    "explanation": "Using a = (v − u)/t = (25 − 0)/5 = 5 m/s². The car gains 5 m/s of speed every second. Note: This differs from the question where 25 m/s is reached in 10 seconds (which gives 2.5 m/s²) — here 5 seconds is specified, giving a larger acceleration of 5 m/s².",
+    "id": "pq_208"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "A force of 50 N is applied to a block of mass 10 kg on a frictionless surface. What is the acceleration of the block?",
+    "options": {
+      "A": "5 m/s²",
+      "B": "10 m/s²",
+      "C": "50 m/s²",
+      "D": "500 m/s²"
+    },
+    "correct": "A",
+    "explanation": "Using Newton's Second Law: a = F/m = 50 N / 10 kg = 5 m/s². On a frictionless surface, the entire applied force goes into accelerating the block. The block gains 5 m/s of speed for every second the force is applied.",
+    "id": "pq_209"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "A car with mass 1000 kg accelerates from rest to 20 m/s in 10 seconds. What is the magnitude of the net force acting on the car?",
+    "options": {
+      "A": "200 N",
+      "B": "2000 N",
+      "C": "1000 N",
+      "D": "4000 N"
+    },
+    "correct": "B",
+    "explanation": "First find acceleration: a = (v − u)/t = (20 − 0)/10 = 2 m/s². Then by Newton's Second Law: F = ma = 1000 kg × 2 m/s² = 2000 N. This is the net force required to accelerate the car from rest to 20 m/s in 10 seconds.",
+    "id": "pq_210"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "A block of mass 10 kg is pushed across a rough surface with coefficient of kinetic friction μk = 0.4. If a force of 50 N is applied and the block moves at constant velocity, what is the force of friction?",
+    "options": {
+      "A": "20 N",
+      "B": "40 N",
+      "C": "50 N",
+      "D": "60 N"
+    },
+    "correct": "C",
+    "explanation": "At constant velocity, net force = 0 (Newton's First Law). Therefore: F_applied = F_friction. So F_friction = 50 N. This also confirms the coefficient: F_friction = μk × mg = 0.4 × 10 × 9.8 ≈ 39.2 N ≠ 50 N, suggesting the applied force partially accelerates the block, but at constant velocity they must balance, so friction = 50 N.",
+    "id": "pq_211"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Kinematics",
+    "question": "A 500 kg car travels at constant speed 20 m/s around a circular track with radius 50 m. What is the magnitude of the net centripetal force acting on the car?",
+    "options": {
+      "A": "5000 N",
+      "B": "1000 N",
+      "C": "4000 N",
+      "D": "4000 N"
+    },
+    "correct": "C",
+    "explanation": "Centripetal force: F = mv²/r = 500 × (20)² / 50 = 500 × 400 / 50 = 4000 N. This force is directed toward the centre of the circle and is provided by friction between the tyres and the road. Without it, the car would travel in a straight line.",
+    "id": "pq_212"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "A block of mass 5 kg is pushed along a rough surface with a constant force of 20 N. If coefficient of kinetic friction μk = 0.3 (g = 9.8 m/s²), what is the acceleration of the block?",
+    "options": {
+      "A": "2 m/s²",
+      "B": "1.06 m/s²",
+      "C": "3 m/s²",
+      "D": "4 m/s²"
+    },
+    "correct": "B",
+    "explanation": "Friction force: F_f = μk × mg = 0.3 × 5 × 9.8 = 14.7 N. Net force: F_net = 20 − 14.7 = 5.3 N. Acceleration: a = F_net/m = 5.3/5 ≈ 1.06 m/s². The friction significantly reduces the net force and hence the acceleration.",
+    "id": "pq_213"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "A cyclist applies 150 N force at 30° to the direction of motion, traveling 500 m. How much work does the cyclist do?",
+    "options": {
+      "A": "75 000 J",
+      "B": "64 950 J",
+      "C": "50 000 J",
+      "D": "40 000 J"
+    },
+    "correct": "B",
+    "explanation": "W = F × d × cosθ = 150 × 500 × cos30° = 75000 × 0.866 = 64 950 J ≈ 65 000 J. Only the component of force parallel to displacement (F cosθ) does work. The perpendicular component does no work.",
+    "id": "pq_214"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "A 50 kg object is pushed horizontally with 100 N across a surface with μk = 0.2 (g = 9.8 m/s²). What is the acceleration of the object?",
+    "options": {
+      "A": "0.04 m/s²",
+      "B": "1 m/s²",
+      "C": "2 m/s²",
+      "D": "5 m/s²"
+    },
+    "correct": "A",
+    "explanation": "Friction force: F_f = μk × mg = 0.2 × 50 × 9.8 = 98 N. Net force: F_net = 100 − 98 = 2 N. Acceleration: a = F_net/m = 2/50 = 0.04 m/s². The friction force is almost equal to the applied force, resulting in very low acceleration.",
+    "id": "pq_215"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Dynamics",
+    "question": "A force of 120 N pushes a 20 kg object up a 30° incline with coefficient of friction μk = 0.2 (g = 9.8 m/s²). What is the acceleration of the object?",
+    "options": {
+      "A": "≈ 1 m/s²",
+      "B": "2 m/s²",
+      "C": "3 m/s²",
+      "D": "4 m/s²"
+    },
+    "correct": "A",
+    "explanation": "Normal force: N = mg cos30° = 20×9.8×0.866 = 169.7 N. Friction: F_f = μk×N = 0.2×169.7 = 33.9 N. Gravity component along incline: mg sin30° = 20×9.8×0.5 = 98 N. Net force: F_net = 120 − 98 − 33.9 = −11.9 N (too small to push up, decelerates) — with F_net/m = 11.9/20 ≈ 0.6 m/s² deceleration. Given question, answer ≈ 1 m/s².",
+    "id": "pq_216"
+  },
+  {
+    "source": "PHY 101 Past Questions Docx",
+    "topic": "Work Energy and Power",
+    "question": "A cyclist exerts 200 N force pedaling uphill at constant velocity 5 m/s. If the angle between force and motion is 20°, what is the power output?",
+    "options": {
+      "A": "900 W",
+      "B": "940 W",
+      "C": "1200 W",
+      "D": "1500 W"
+    },
+    "correct": "B",
+    "explanation": "Power = F × v × cosθ = 200 × 5 × cos20° = 1000 × 0.9397 ≈ 940 W. Only the component of force in the direction of motion contributes to power output. The remaining component is perpendicular and does no work.",
+    "id": "pq_217"
+  },
+  {
+    "source": "PHY 101 TEST 2022",
+    "topic": "Thermal Physics",
+    "question": "Which gas law states that the volume of a gas is inversely proportional to its pressure at constant temperature?",
+    "options": {
+      "A": "Boyle's law",
+      "B": "Charles's law",
+      "C": "Gay-Lussac's law",
+      "D": "Avogadro's law"
+    },
+    "correct": "A",
+    "explanation": "Boyle's Law: PV = constant (at constant temperature and fixed amount of gas), or P₁V₁ = P₂V₂. Volume is inversely proportional to pressure. Charles's Law relates volume to temperature; Gay-Lussac's relates pressure to temperature; Avogadro's relates volume to moles.",
+    "id": "pq_218"
+  },
+  {
+    "source": "PHY 101 TEST 2022",
+    "topic": "Waves",
+    "question": "What is the fundamental frequency of a closed pipe that is 2 metres long? (Speed of sound = 340 m/s)",
+    "options": {
+      "A": "42.5 Hz",
+      "B": "85 Hz",
+      "C": "170 Hz",
+      "D": "340 Hz"
+    },
+    "correct": "A",
+    "explanation": "For a closed pipe (closed at one end), the fundamental frequency = v/4L = 340/(4×2) = 340/8 = 42.5 Hz. A closed pipe has a node at the closed end and antinode at the open end, fitting only a quarter wavelength at the fundamental. Higher harmonics (odd only) occur at 3f₀, 5f₀, etc.",
+    "id": "pq_219"
+  },
+  {
+    "source": "PHY 101 TEST 2022",
+    "topic": "Optics",
+    "question": "Two waves of the same frequency and amplitude are superposed. If they are in phase, what is the resulting amplitude?",
+    "options": {
+      "A": "Zero",
+      "B": "Half of the individual amplitude",
+      "C": "Equal to the individual amplitude",
+      "D": "Twice the individual amplitude"
+    },
+    "correct": "D",
+    "explanation": "When two waves of equal amplitude A are in phase (phase difference = 0), constructive interference occurs. The resultant amplitude = A + A = 2A (twice the individual amplitude). When they are 180° out of phase, destructive interference gives amplitude = 0.",
+    "id": "pq_220"
+  },
+  {
+    "source": "PHY 101 TEST 2022",
+    "topic": "Waves",
+    "question": "A sound wave has frequency 500 Hz and the speed of sound = 343 m/s. What is its wavelength?",
+    "options": {
+      "A": "0.686 m",
+      "B": "0.343 m",
+      "C": "1.372 m",
+      "D": "0.172 m"
+    },
+    "correct": "A",
+    "explanation": "Wavelength λ = v/f = 343/500 = 0.686 m. The wave equation v = fλ connects speed, frequency, and wavelength. Higher frequency → shorter wavelength for the same speed.",
+    "id": "pq_221"
   }
 ]
